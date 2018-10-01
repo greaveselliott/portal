@@ -31,7 +31,7 @@
 - [ ] Server-side render initial view
 
 ## Configuration
-- [ x ] Add monorepo
+- [x] Add monorepo
 - [ ] Configure Redux
 - [ ] Configure Redux thunk
 - [ ] Configure Jest / Enzyme
