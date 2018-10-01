@@ -1,0 +1,35 @@
+{
+  "name": "@organization/core-simple-package",
+  "version": "1.0.0",
+  "description": "My simple core package.",
+  "author": "Stanimir Todorov",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-eslint": "8.2.3",
+    "babel-loader": "7.1.4",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-friendly-formatter": "4.0.1",
+    "eslint-import-resolver-webpack": "0.10.0",
+    "eslint-loader": "2.0.0",
+    "eslint-plugin-import": "2.12.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-prettier": "2.6.0",
+    "eslint-plugin-react": "7.8.2",
+    "eslint-plugin-require-path-exists": "1.1.7",
+    "prettier": "1.13.3",
+    "webpack": "4.10.2",
+    "webpack-cli": "2.1.4",
+    "webpack-dev-server": "3.1.4"
+  },
+  "dependencies": {
+    "babel-preset-stage-1": "6.24.1",
+    "react": "16.4.0",
+    "react-dom": "16.4.0"
+  }
+}
