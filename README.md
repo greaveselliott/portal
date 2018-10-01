@@ -33,6 +33,7 @@
 ##Configuration
 [*] Add monorepo
 [] Configure Redux
+[] Configure Redux thunk
 [] Configure Jest / Enzyme
 [] Configure Webpack loader SASS
 
