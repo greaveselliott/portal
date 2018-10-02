@@ -1,13 +1,13 @@
 import { get, post, put } from 'axios';
 import { API_URL } from './constants';
 
-const fetchAuth = () =>
+const fetchAuth = ({ email, password }) =>
     dispatch(requestAuth())
     dispatch =>
         post(`${API_URL}/login`, {
             headers: { 'Content-Type': 'application/json' },
-            email: "mondo@example.com",
-            password:"hunter2"
+            email,
+            password
         })
         .then(
             response => response.json(),
