@@ -1,4 +1,5 @@
 const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const PATHS = {
   SRC: path.join(__dirname, 'src')
@@ -15,6 +16,14 @@ const webpackConfig = {
   },
   module: {
     rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+            "css-loader",
+            "sass-loader"
+        ]
+      },
       {
         test: /\.(js|jsx)?$/,
         use: [
@@ -57,6 +66,12 @@ const webpackConfig = {
       }
     ]
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css"
+    })
+  ],
   resolve: {
     extensions: ['.js', '.jsx']
   },
