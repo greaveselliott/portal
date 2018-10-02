@@ -35,8 +35,8 @@
 - [x] Configure Redux
 - [ ] Configure Redux thunk
 - [x] Configure Jest
-- [ ] Configure Enzyme
-- [ ] Configure Enzyme matchers
+- [x] Configure Enzyme
+- [x] Configure Enzyme matchers
 - [ ] Configure Webpack loader SASS
 
 ## Components
