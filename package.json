@@ -11,7 +11,8 @@
     "publish": "lerna publish",
     "start": "cd main-app && webpack-dev-server",
     "eslint": "eslint src --fix -f codeframe --ext .jsx --ext .js ",
-    "lint": "yarn run eslint"
+    "lint": "yarn run eslint",
+    "test": "jest"
   },
   "lint-staged": {
     "*.js": [
@@ -26,7 +27,12 @@
   "author": "Stanimir Todorov",
   "license": "MIT",
   "devDependencies": {
-    "lerna": "2.11.0"
+    "babel-jest": "^23.6.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^23.6.0",
+    "lerna": "2.11.0",
+    "react-test-renderer": "^16.5.2"
   },
   "workspaces": [
     "packages/*",

@@ -34,7 +34,9 @@
 - [x] Add monorepo
 - [x] Configure Redux
 - [ ] Configure Redux thunk
-- [ ] Configure Jest / Enzyme
+- [x] Configure Jest
+- [ ] Configure Enzyme
+- [ ] Configure Enzyme matchers
 - [ ] Configure Webpack loader SASS
 
 ## Components
