@@ -48,5 +48,8 @@
   ],
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>config/jest.setup.js"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6"
   }
 }
