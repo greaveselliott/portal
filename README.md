@@ -41,6 +41,7 @@
 ### UI Library
 - [ ] Button
 - [ ] Image
+- [ ] Input
 - [ ] Icon
 - [ ] Link
 - [ ] Header
