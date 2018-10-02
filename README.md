@@ -32,7 +32,7 @@
 
 ## Configuration
 - [x] Add monorepo
-- [ ] Configure Redux
+- [x] Configure Redux
 - [ ] Configure Redux thunk
 - [ ] Configure Jest / Enzyme
 - [ ] Configure Webpack loader SASS

@@ -1,3 +1,11 @@
-import Package from './src/components/Package';
-
-export default Package;
+export { default as Button } from './src/button/button';
+export { default as Image } from './src/image/image';
+export { default as Input } from './src/input/input';
+export { default as Icon } from './src/icon/icon';
+export { default as Link } from './src/link/link';
+export { default as Header } from './src/header/header';
+export { default as Page } from './src/page/page';
+export { default as Pagination } from './src/pagination/pagination';
+export { default as Tiles } from './src/tiles/tiles';
+export { default as Stage } from './src/stage/stage';
+export { default as ProgressBar } from './src/progress-bar/progress-bar';
