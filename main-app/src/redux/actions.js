@@ -17,7 +17,7 @@ export const fetchAuth = ({ email, password }) => dispatch => {
       email,
       password
     })
-    .then(json => dispatch(receiveAuth(json.data)), error => dispatch(errorAuth(error)));
+    .then(json => dispatch(receiveAuth(json.data)), error => dispatch(fetchError(error)));
 };
 
 export const receiveApps = ({ apps }) => ({
@@ -30,8 +30,7 @@ export const fetchApps = ({ accessToken }) => dispatch => {
     .get(`${API_URL}/apps`, {
       headers: { Authorization: accessToken }
     })
-    .then(response => response.json(), error => console.log('An error occurred.', error))
-    .then(json => dispatch(receiveApps(json)));
+    .then(response => response.data, error => dispatch(fetchError(error)));
 };
 
 export const receiveAppUpdate = ({ app }) => ({
@@ -44,8 +43,7 @@ export const fetchAppUpdate = ({ accessToken, appId }) => dispatch => {
     .put(`${API_URL}/apps/${appId}`, {
       headers: { Authorization: accessToken }
     })
-    .then(response => response.json(), error => console.log('An error occurred.', error))
-    .then(json => dispatch(receiveAppUpdate(json)));
+    .then(response => response.data, error => dispatch(fetchError(error)));
 };
 
 export const recieveAppUsers = ({ users }) => ({
@@ -58,6 +56,5 @@ export const fetchAppUsers = ({ accessToken, appId, pageNumber = 0 }) => dispatc
     .put(`${API_URL}/apps/${appId}/users?offset=${pageNumber * 25}`, {
       headers: { Authorization: accessToken }
     })
-    .then(response => response.json(), error => console.log('An error occurred.', error))
-    .then(json => dispatch(recieveAppUsers(json)));
+    .then(response => response.data, error => dispatch(fetchError(error)));
 };
