@@ -21,6 +21,7 @@
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": "off",
+    "import/parser": "babel-eslint",
 
     "jsx-a11y/no-static-element-interactions": "off",
     "jsx-a11y/label-has-for": "off",

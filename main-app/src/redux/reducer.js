@@ -1,35 +1,34 @@
-import updateObjectInArray from '../services/update-object-in-array';
+import updateObjectInArray from './services/update-object-in-array';
 
-const rootReducer = (state = { auth_token: undefined, apps: [], users: []}, action) => {
+const app = (state = { accessToken: undefined, apps: [], users: [] }, action) => {
   switch (action.type) {
-      case 'GET_AUTH_TOKEN':
-          return {
-              ...state,
-              auth_token: action.auth_token
-          }
-      
-      case 'FETCH_APPS':
-          return {
-              ...state,
-              apps: action.apps
-          }
+    case 'AUTH_RECEIVE':
+      return {
+        ...state,
+        accessToken: action.accessToken
+      };
 
-      case 'UPDATE_APP':
-          return {
-              ...state,
-              apps: updateObjectInArray(state.apps, action.app)
-          };
+    case 'APPS_RECEIVE':
+      return {
+        ...state,
+        apps: action.apps
+      };
 
-      case 'FETCH_APP_USERS':
-          return {
-              ...state,
-              users: action.users
-          };
+    case 'APP_UPDATE_RECEIVE':
+      return {
+        ...state,
+        apps: updateObjectInArray(state.apps, action.app)
+      };
 
-      default:
-          return state;
+    case 'APP_USERS_RECEIVE':
+      return {
+        ...state,
+        users: action.users
+      };
+
+    default:
+      return state;
   }
 };
 
-
-export default rootReducer;
+export default app;
