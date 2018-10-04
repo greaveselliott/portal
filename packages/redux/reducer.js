@@ -1,4 +1,16 @@
-import updateObjectInArray from './services/update-object-in-array';
+const updateApp = (apps, nextApp) =>
+  apps.map(prevApp => {
+    if (prevApp.id === nextApp.id) {
+      return {
+        ...prevApp,
+        ...nextApp
+      };
+    }
+
+    return {
+      ...prevApp
+    };
+  });
 
 const app = (state = { accessToken: undefined, apps: [], users: [] }, action) => {
   switch (action.type) {
@@ -17,7 +29,7 @@ const app = (state = { accessToken: undefined, apps: [], users: [] }, action) =>
     case 'APP_UPDATE_RECEIVE':
       return {
         ...state,
-        apps: updateObjectInArray(state.apps, action.app)
+        apps: updateApp(state.apps, action.app)
       };
 
     case 'APP_USERS_RECEIVE':

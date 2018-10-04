@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { fetchAppUsers } from '@portal/redux/actions';
+import { fetchAppUsers, fetchAppUpdate } from '@portal/redux/actions';
 import Apps from './apps';
 
 const mapStateToProps = state => ({
@@ -9,7 +9,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onFetchAppUsers: props => dispatch(fetchAppUsers(props))
+  onFetchAppUsers: props => dispatch(fetchAppUsers(props)),
+  onFetchAppUpdate: props => dispatch(fetchAppUpdate(props))
 });
 
 export default connect(

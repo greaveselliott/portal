@@ -1,5 +1,5 @@
 import React from 'react';
-import { any, arrayOf, string } from 'prop-types';
+import { arrayOf, node, oneOfType, string } from 'prop-types';
 import classnames from 'classnames';
 
 const Page = ({ children, className, title }) => (
@@ -14,7 +14,7 @@ Page.defaultProps = {
 };
 
 Page.propTypes = {
-  children: arrayOf(any).isRequired,
+  children: oneOfType([arrayOf(node), node]).isRequired,
   className: string,
   title: string.isRequired
 };

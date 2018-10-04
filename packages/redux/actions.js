@@ -41,9 +41,8 @@ export const receiveAppUpdate = ({ app }) => ({
 
 export const fetchAppUpdate = ({ accessToken, id, appValues }) => dispatch => {
   axios
-    .put(`${API_URL}/apps/${id}`, {
-      headers: { Authorization: accessToken },
-      ...appValues
+    .put(`${API_URL}/apps/${id}`, appValues, {
+      headers: { Authorization: accessToken }
     })
     .then(json => dispatch(receiveAppUpdate(json.data)), error => dispatch(fetchError(error)));
 };
