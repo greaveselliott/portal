@@ -1,8 +1,8 @@
 {
-  "name": "@portal/main-app",
+  "name": "@portal/redux",
   "version": "1.0.2",
   "description": "Main App",
-  "main": "index.jsx",
+  "main": "index.js",
   "author": "Stanimir Todorov",
   "license": "MIT",
   "devDependencies": {

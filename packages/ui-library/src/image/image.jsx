@@ -2,21 +2,25 @@ import React from 'react';
 import classnames from 'classnames';
 import { number, string } from 'prop-types';
 
-const Button = ({ className, height, src, width }) => (
-    <img
-        className={classnames('eg-image', className)}
-        height={height}
-        src={src}
-        width={width}
-    />
+import './image.scss';
+
+const Image = ({ alt, className, src }) => (
+  <div className={classnames('eg-image', className)}>
+    <img className="eg-image__element" alt={alt} src={src} />
+  </div>
 );
 
-
-Button.propTypes = {
-    className: string,
-    height: number,
-    src: string,
-    width: number
+Image.defaultProps = {
+  height: undefined,
+  width: undefined
 };
 
-export default Button;
+Image.propTypes = {
+  alt: string.isRequired,
+  className: string.isRequired,
+  height: number,
+  src: string.isRequired,
+  width: number
+};
+
+export default Image;

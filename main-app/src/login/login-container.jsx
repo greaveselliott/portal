@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
-import { fetchAuth } from '../redux/actions';
+import { fetchAuth } from '@portal/redux/actions';
 import Login from './login';
-/* eslint-disable */
+
 export const mapDispatchToProps = dispatch => ({
   onSubmit: loginCredentials => dispatch(fetchAuth(loginCredentials))
 });

@@ -3,7 +3,7 @@
 exports[`Image component... should render correctly 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Button
+  Symbol(enzyme.__unrendered__): <Image
     className="abc"
     height={123}
     src="abc"
@@ -22,6 +22,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
+      "alt": undefined,
       "className": "eg-image abc",
       "height": 123,
       "src": "abc",
@@ -37,6 +38,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
+        "alt": undefined,
         "className": "eg-image abc",
         "height": 123,
         "src": "abc",

@@ -1,14 +1,15 @@
 import React from 'react';
-import { array, func } from 'prop-types';
+import { any, arrayOf, func } from 'prop-types';
 
 const Button = ({ children, onClick }) => (
-    <button className="eg-button" onClick={onClick}>{children}</button>
+  <button className="eg-button" onClick={onClick}>
+    {children}
+  </button>
 );
 
-
 Button.propTypes = {
-    children: array,
-    onClick: func
-}
+  children: arrayOf(any).isRequired,
+  onClick: func.isRequired
+};
 
 export default Button;

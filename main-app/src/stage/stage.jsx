@@ -2,9 +2,17 @@ import React from 'react';
 import { bool } from 'prop-types';
 
 import LoginContainer from '../login/login-container';
-import Apps from '../apps/apps';
+import AppsContainer from '../apps/apps-container';
 
-const Stage = ({ isAuthenticated }) => <div>{isAuthenticated ? <Apps /> : <LoginContainer />}</div>;
+import './stage.scss';
+
+const Stage = ({ isAuthenticated }) => (
+  <div className="eg-stage">
+    {isAuthenticated ? '' : ''}
+    <LoginContainer />
+    <AppsContainer />
+  </div>
+);
 
 Stage.defaultProps = {
   isAuthenticated: false

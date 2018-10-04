@@ -39,12 +39,13 @@ export const receiveAppUpdate = ({ app }) => ({
   app
 });
 
-export const fetchAppUpdate = ({ accessToken, appId }) => dispatch => {
+export const fetchAppUpdate = ({ accessToken, appId, appValues }) => dispatch => {
   axios
     .put(`${API_URL}/apps/${appId}`, {
-      headers: { Authorization: accessToken }
+      headers: { Authorization: accessToken },
+      ...appValues
     })
-    .then(response => response.data, error => dispatch(fetchError(error)));
+    .then(json => dispatch(receiveAppUpdate(json.data)), error => dispatch(fetchError(error)));
 };
 
 export const recieveAppUsers = ({ users }) => ({

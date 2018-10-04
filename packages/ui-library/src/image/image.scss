@@ -1,0 +1,10 @@
+.eg-image {
+    position: relative;
+    background-color: #dedede;
+    border-radius: 0.5em;
+
+    &__element {
+        width: 100%;
+        height: auto;
+    }
+}
