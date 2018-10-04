@@ -12,6 +12,9 @@ const Apps = ({ accessToken, apps, onFetchAppUsers }) => (
           <h2 className="eg-apps__name">{name}</h2>
           <Button onClick={() => onFetchAppUsers({ accessToken, id })}>See Users</Button>
           <Button>Edit</Button>
+          <aside className="eg-apps__edit">
+
+          </aside>
         </section>
       ))}
   </Page>
