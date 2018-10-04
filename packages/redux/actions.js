@@ -39,9 +39,9 @@ export const receiveAppUpdate = ({ app }) => ({
   app
 });
 
-export const fetchAppUpdate = ({ accessToken, appId, appValues }) => dispatch => {
+export const fetchAppUpdate = ({ accessToken, id, appValues }) => dispatch => {
   axios
-    .put(`${API_URL}/apps/${appId}`, {
+    .put(`${API_URL}/apps/${id}`, {
       headers: { Authorization: accessToken },
       ...appValues
     })
@@ -53,10 +53,10 @@ export const recieveAppUsers = ({ users }) => ({
   users
 });
 
-export const fetchAppUsers = ({ accessToken, appId, pageNumber = 0 }) => dispatch => {
+export const fetchAppUsers = ({ accessToken, id, pageNumber = 0 }) => dispatch => {
   axios
-    .put(`${API_URL}/apps/${appId}/users?offset=${pageNumber * 25}`, {
+    .get(`${API_URL}/apps/${id}/users?offset=${pageNumber * 25}`, {
       headers: { Authorization: accessToken }
     })
-    .then(response => response.data, error => dispatch(fetchError(error)));
+    .then(json => dispatch(recieveAppUsers(json.data)), error => dispatch(fetchError(error)));
 };

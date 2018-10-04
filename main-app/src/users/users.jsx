@@ -1,12 +1,12 @@
 import React from 'react';
 import { arrayOf, shape, string } from 'prop-types';
 
-import { Image } from '@portal/ui-library';
+import { Image, Page } from '@portal/ui-library';
 
 import './users.scss';
 
 const Users = ({ users }) => (
-  <section className="eg-users">
+  <Page className="eg-users" title="users">
     {users.map(user => (
       <figure className="eg-users__row" key={user.id}>
         <Image className="eg-users__image" src={user.avatar} alt={user.name} />
@@ -16,7 +16,7 @@ const Users = ({ users }) => (
         </figcaption>
       </figure>
     ))}
-  </section>
+  </Page>
 );
 
 Users.propTypes = {

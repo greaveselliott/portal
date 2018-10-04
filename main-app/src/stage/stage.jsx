@@ -3,6 +3,7 @@ import { bool } from 'prop-types';
 
 import LoginContainer from '../login/login-container';
 import AppsContainer from '../apps/apps-container';
+import UsersContainer from '../users/users-container';
 
 import './stage.scss';
 
@@ -11,6 +12,7 @@ const Stage = ({ isAuthenticated }) => (
     {isAuthenticated ? '' : ''}
     <LoginContainer />
     <AppsContainer />
+    <UsersContainer />
   </div>
 );
 
