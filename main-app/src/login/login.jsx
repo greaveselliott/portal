@@ -15,7 +15,7 @@ const Login = ({ onSubmit }) => (
       type="submit"
       onClick={() => onSubmit({ email: email.current.value, password: password.current.value })}
     >
-      Login
+      Sign in
     </Button>
   </Page>
 );

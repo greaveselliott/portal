@@ -1,5 +1,5 @@
 import React from 'react';
-import { bool } from 'prop-types';
+import { bool, func } from 'prop-types';
 
 import { Button } from '@portal/ui-library';
 
@@ -9,12 +9,20 @@ import UsersContainer from '../users/users-container';
 
 import './stage.scss';
 
-const Stage = ({ isAuthenticated, isEditing, isViewingUsers }) => (
+const Stage = ({ isAuthenticated, isEditing, isViewingUsers, onGotoLoginPage, onGotoAppsPage }) => (
   <div className="eg-stage">
     <header className="eg-stage__header">
-      {(isEditing || isViewingUsers) && <Button className="eg-stage__back-button">Back</Button>}
+      {(isEditing || isViewingUsers) && (
+        <Button className="eg-stage__back-button" onClick={() => onGotoAppsPage()}>
+          Back
+        </Button>
+      )}
       <h1 className="eg-stage__title">Portal</h1>
-      {isAuthenticated && <Button className="eg-stage__logout">Lgoout</Button>}
+      {isAuthenticated && (
+        <Button className="eg-stage__logout" onClick={() => onGotoLoginPage()}>
+          Sign out
+        </Button>
+      )}
     </header>
     {!isAuthenticated ? <LoginContainer /> : (isViewingUsers && <UsersContainer />) || <AppsContainer />}
   </div>
@@ -29,7 +37,9 @@ Stage.defaultProps = {
 Stage.propTypes = {
   isAuthenticated: bool,
   isEditing: bool,
-  isViewingUsers: bool
+  isViewingUsers: bool,
+  onGotoLoginPage: func.isRequired,
+  onGotoAppsPage: func.isRequired
 };
 
 export default Stage;

@@ -1,5 +1,7 @@
 import { connect } from 'react-redux';
 
+import { gotoLoginPage, gotoAppsPage } from '@portal/redux/actions';
+
 import Stage from './stage';
 
 const mapStateToProps = state => ({
@@ -8,4 +10,12 @@ const mapStateToProps = state => ({
   isViewingUsers: state.isViewingUsers
 });
 
-export default connect(mapStateToProps)(Stage);
+const mapDispatchToProps = dispatch => ({
+  onGotoLoginPage: () => dispatch(gotoLoginPage()),
+  onGotoAppsPage: () => dispatch(gotoAppsPage())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Stage);
