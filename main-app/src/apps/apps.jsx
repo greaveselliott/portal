@@ -19,7 +19,6 @@ const Apps = ({ accessToken, apps, onFetchAppUsers, onFetchAppUpdate }) => (
             <Button className="eg-apps__action" onClick={() => onFetchAppUsers({ accessToken, id })}>
               See Users
             </Button>
-            <Button className="eg-apps__action">Edit</Button>
 
             <aside className="eg-apps__edit">
               <Input className="eg-apps__field" name="Rename app" ref={appName} />
