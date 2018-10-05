@@ -6,7 +6,7 @@
   ],
   "packages": [
     "packages/*",
-    "organization-main-app"
+    "main-app"
   ],
   "useWorkspaces": true,
   "version": "1.0.2"
