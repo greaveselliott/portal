@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { bool } from 'prop-types';
 
 import LoginContainer from '../login/login-container';
@@ -9,10 +9,14 @@ import './stage.scss';
 
 const Stage = ({ isAuthenticated }) => (
   <div className="eg-stage">
-    {isAuthenticated ? '' : ''}
-    <LoginContainer />
-    <AppsContainer />
-    <UsersContainer />
+    {!isAuthenticated ? (
+      <LoginContainer />
+    ) : (
+      <Fragment>
+        <AppsContainer />
+        <UsersContainer />
+      </Fragment>
+    )}
   </div>
 );
 
