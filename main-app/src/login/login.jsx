@@ -1,24 +1,22 @@
 import React, { createRef } from 'react';
 import { func } from 'prop-types';
 
-import { Input, Page } from '@portal/ui-library';
+import { Button, Input, Page } from '@portal/ui-library';
 
 const email = createRef();
 const password = createRef();
 
 const Login = ({ onSubmit }) => (
   <Page className="eg-login" title="Login">
-    <form
-      className="eg-login__form"
-      onSubmit={e => {
-        e.preventDefault();
-        onSubmit({ email: email.current.value, password: password.current.value });
-      }}
+    <Input className="eg-login__field" name="Email" type="email" ref={email} />
+    <Input className="eg-login__field" name="Password" type="password" ref={password} />
+    <Button
+      className="eg-login__submit"
+      type="submit"
+      onClick={() => onSubmit({ email: email.current.value, password: password.current.value })}
     >
-      <Input className="eg-login__field" type="email" ref={email} />
-      <Input className="eg-login__field" type="password" ref={password} />
-      <Input className="eg-login__submit" type="submit" />
-    </form>
+      Login
+    </Button>
   </Page>
 );
 

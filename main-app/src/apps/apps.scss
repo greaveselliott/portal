@@ -1,0 +1,42 @@
+.eg-apps {
+    &__app {
+        display: inline-block;
+        width: calc(50% - 16px);
+        
+        &:nth-child(odd) {
+            margin-right: 16px;
+        }
+
+        &:nth-child(even) {
+            margin-left: 16px;
+        }
+    }
+
+    &__logo {
+        margin-bottom: 16px;
+    }
+    
+    &__action {
+        width: calc(50% - 8px);
+        
+        &:nth-child(odd) {
+            margin-right: 8px;
+        }
+
+        &:nth-child(even) {
+            margin-left: 8px;
+        }
+    }
+
+    &__name {
+        margin-bottom: 16px;
+    }
+
+    &__field {
+
+    }
+
+    &__save {
+
+    }
+}

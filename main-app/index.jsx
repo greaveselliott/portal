@@ -7,6 +7,8 @@ import thunk from 'redux-thunk';
 import appReducer from '@portal/redux/reducer';
 import { StageContainer } from './src';
 
+import './reset.scss';
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(appReducer, composeEnhancers(applyMiddleware(thunk)));
 

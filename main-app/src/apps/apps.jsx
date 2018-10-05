@@ -3,6 +3,8 @@ import { arrayOf, date, func, shape, string } from 'prop-types';
 
 import { Button, Input, Image, Page } from '@portal/ui-library';
 
+import './apps.scss';
+
 const Apps = ({ accessToken, apps, onFetchAppUsers, onFetchAppUpdate }) => (
   <Page className="eg-apps" title="Apps">
     {apps &&
@@ -14,11 +16,13 @@ const Apps = ({ accessToken, apps, onFetchAppUsers, onFetchAppUpdate }) => (
             <Image alt={name} className="eg-apps__logo" src={logo} />
             <h2 className="eg-apps__name">{name}</h2>
 
-            <Button onClick={() => onFetchAppUsers({ accessToken, id })}>See Users</Button>
-            <Button>Edit</Button>
+            <Button className="eg-apps__action" onClick={() => onFetchAppUsers({ accessToken, id })}>
+              See Users
+            </Button>
+            <Button className="eg-apps__action">Edit</Button>
 
             <aside className="eg-apps__edit">
-              <Input className="eg-apps__field" ref={appName} />
+              <Input className="eg-apps__field" name="Rename app" ref={appName} />
               <Button
                 className="eg-apps__save"
                 onClick={() =>

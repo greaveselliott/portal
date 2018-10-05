@@ -1,23 +1,41 @@
-.eg-entries {
-
+.eg-users {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
     &__row {
+        flex: 1;
         display: flex;
         height: 60px;
         margin: 0;
         align-items: center;
-        margin-bottom: 8px;
+        margin-bottom: 16px;
     }
 
     &__image {
-        border-radius: 50%;
         overflow: hidden;
         height: 60px;
         width: 60px;
-        margin-right: 18px;
+        margin-right: 16px;
+        padding: 0;
     }
 
     &__caption {
         flex: 1;
         width: calc(100% - 60px);
+    }
+
+    &__name, &__email {
+        font-size: 14px;
+    }
+
+    &__name {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    &__email {
+        display: block;
     }
 }
