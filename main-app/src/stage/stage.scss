@@ -1,3 +1,46 @@
 .eg-stage {
     min-width: 320px;
+    max-width: 480px;
+    margin: 0 auto;
+
+    &__header {
+        font-size: 21px;
+        text-align: center;
+        position: relative;
+        background-color: #dedede;
+        height: 60px;
+        display: flex;
+        align-items: center;
+
+        &:before, &:after {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background-color: inherit;
+            top: 0;
+        }
+
+        &:before {
+            left: 100%;
+        }
+
+        &:after {
+            right: 100%;
+        }
+    }
+
+    &__back-button {
+
+    }
+
+    &__title {
+        width: 100%;
+    }
+
+    &__logout {
+        margin-bottom: 0;
+        position: absolute;
+        right: 0;
+    }
 }
