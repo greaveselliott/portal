@@ -34,11 +34,11 @@
 ## Configuration
 - [x] Add monorepo
 - [x] Configure Redux
-- [ ] Configure Redux thunk
+- [x] Configure Redux thunk
 - [x] Configure Jest
 - [x] Configure Enzyme
 - [x] Configure Enzyme matchers
-- [ ] Configure Webpack loader SASS
+- [x] Configure Webpack loader SASS
 
 ## Components
 ### UI Library
