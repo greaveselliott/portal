@@ -1,6 +1,8 @@
 import React from 'react';
-import { any, arrayOf, func, string } from 'prop-types';
+import { arrayOf, func, node, oneOfType, string } from 'prop-types';
 import classnames from 'classnames';
+
+import './button.scss';
 
 const Button = ({ children, className, onClick }) => (
   <button className={classnames('eg-button', className)} onClick={onClick}>
@@ -13,7 +15,7 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  children: arrayOf(any).isRequired,
+  children: oneOfType([arrayOf(node), node]).isRequired,
   className: string,
   onClick: func.isRequired
 };

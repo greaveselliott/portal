@@ -1,0 +1,21 @@
+.eg-input {
+    width: 100%;
+    position: relative;
+    margin-bottom: 16px;
+
+    &__label {
+        width: inherit;
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    &__email, &__password, &__text {
+        background-color: white;
+        border-radius: 5px;
+        border: solid 1px #dedede;
+        height: 36px;
+        line-height: 36px;
+        padding: 5px 10px;
+        width: inherit;
+    }
+}

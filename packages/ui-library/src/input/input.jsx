@@ -2,8 +2,15 @@ import React, { forwardRef } from 'react';
 import classnames from 'classnames';
 import { string } from 'prop-types';
 
-const Input = forwardRef(({ className, placeholder, type }, ref) => (
-  <input className={classnames('eg-input', className)} placeholder={placeholder} ref={ref} type={type} />
+import './input.scss';
+
+const Input = forwardRef(({ className, name, placeholder, type }, ref) => (
+  <div className={classnames('eg-input', className)}>
+    <label className="eg-input__label" htmlFor={name}>
+      {name}
+    </label>
+    <input className={`eg-input__${type}`} id={name} placeholder={placeholder} ref={ref} type={type} />
+  </div>
 ));
 
 Input.defaultProps = {

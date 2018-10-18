@@ -1,8 +1,20 @@
 import axios from 'axios';
-import { API_URL, AUTH_RECEIVE, APPS_RECEIVE, APP_UPDATE_RECEIVE, APP_USERS_RECEIVE, FETCH_ERROR } from './constants';
+import {
+  API_URL,
+  AUTH_RECEIVE,
+  APPS_RECEIVE,
+  APP_UPDATE_RECEIVE,
+  APP_USERS_RECEIVE,
+  FETCH_ERROR,
+  GOTO_EDIT_PAGE,
+  GOTO_USERS_PAGE,
+  GOTO_APPS_PAGE,
+  GOTO_LOGIN_PAGE
+} from './constants';
 
-export const fetchError = () => ({
-  type: FETCH_ERROR
+export const fetchError = ({ error }) => ({
+  type: FETCH_ERROR,
+  error
 });
 
 export const receiveApps = ({ apps }) => ({
@@ -28,7 +40,8 @@ export const fetchAuth = ({ email, password }) => dispatch => {
     .post(`${API_URL}/login`, {
       headers: { 'Content-Type': 'application/json' },
       email,
-      password
+      password,
+      expiry: '120s'
     })
     .then(json => dispatch(receiveAuth(json.data)), error => dispatch(fetchError(error)))
     .then(auth => dispatch(fetchApps(auth)), error => dispatch(fetchError(error)));
@@ -59,3 +72,19 @@ export const fetchAppUsers = ({ accessToken, id, pageNumber = 0 }) => dispatch =
     })
     .then(json => dispatch(recieveAppUsers(json.data)), error => dispatch(fetchError(error)));
 };
+
+export const gotoEditPage = () => ({
+  type: GOTO_EDIT_PAGE
+});
+
+export const gotoUserPage = () => ({
+  type: GOTO_USERS_PAGE
+});
+
+export const gotoAppsPage = () => ({
+  type: GOTO_APPS_PAGE
+});
+
+export const gotoLoginPage = () => ({
+  type: GOTO_LOGIN_PAGE
+});
