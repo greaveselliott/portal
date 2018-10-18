@@ -1,28 +1,29 @@
 # Portal project
+## Get started
 ```
-> git clone https://github.com/stanimirtt/monorepo-yarn-lerna-react-redux-starter.git
-> cd monorepo-yarn-lerna-react-redux-starter
+> git clone https://github.com/greaveselliott/portal.git
+> cd portal
 > yarn
 > yarn start
 ```
 
 # Roadmap
 ## The user can log into the portal using email and password
-- [ ] Implement Redux async action/reducer for authenticating
-- [ ] Handle successful auth
-- [ ] Handle failed auth
+- [x] Implement Redux async action/reducer for authenticating
+- [x] Handle successful auth
+- [x] Handle failed auth
 
 ## The user should go through the authentication process again when the token has expired
-- [ ] Implement experiation timer async action/reducer for auth experiation
+- [x] Implement experiation timer async action/reducer for auth experiation
 
 ## The user can list and update their “apps”
-- [ ] Implement async action for fetching a list of the users apps
-- [ ] Handle successful fetch
+- [x] Implement async action for fetching a list of the users apps
+- [x] Handle successful fetch
 - [ ] Handle failed fetch
 
 ## The user can paginate through a list of “users” associated with an “app”
-- [ ] Implement async action for fetching paged list of users associated with app.
-- [ ] Handle successful fetch
+- [x] Implement async action for fetching paged list of users associated with app.
+- [x] Handle successful fetch
 - [ ] Handle failed fetch
 
 ## Optimization
@@ -33,31 +34,31 @@
 ## Configuration
 - [x] Add monorepo
 - [x] Configure Redux
-- [ ] Configure Redux thunk
+- [x] Configure Redux thunk
 - [x] Configure Jest
 - [x] Configure Enzyme
 - [x] Configure Enzyme matchers
-- [ ] Configure Webpack loader SASS
+- [x] Configure Webpack loader SASS
 
 ## Components
 ### UI Library
-- [ ] Button
-- [ ] Image
-- [ ] Input
+- [x] Button
+- [x] Image
+- [x] Input
 - [ ] Icon
 - [ ] Link
 - [ ] Header
-- [ ] Page
 - [ ] Pagination
 - [ ] Tiles
-- [ ] Stage
+- [x] Stage
 - [ ] Profile
 - [ ] Progress bar
 
 ### Layout
-- [ ] Page
+- [x] Page
 
 ### Pages
-- [ ] Login
-- [ ] All Apps
+- [x] Login
+- [x] All Apps
 - [ ] Single App
+- [ ] Edit App page
