@@ -18,6 +18,14 @@ describe('Button component...', () => {
   it('should render with correct children', () => {
     const SUT = render({ children: [1, 2, 3] });
 
-    expect(SUT).toMatchSnapshot();
+    expect(SUT).toMatchInlineSnapshot(`
+<button
+  className="eg-button"
+>
+  1
+  2
+  3
+</button>
+`);
   });
 });

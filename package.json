@@ -35,7 +35,9 @@
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "enzyme-matchers": "^6.1.2",
+    "enzyme-to-json": "^3.3.4",
     "jest": "^23.6.0",
+    "jest-serializer-html": "^5.0.0",
     "lerna": "2.11.0",
     "mini-css-extract-plugin": "^0.4.3",
     "node-sass": "^4.9.3",
@@ -48,7 +50,34 @@
     "main-app"
   ],
   "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>config/jest.setup.js"
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>config/jest.setup.js",
+    "testMatch": [
+      "<rootDir>/**/?(*.)(spec|test).js?(x)"
+    ],
+    "testEnvironment": "node",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.css$": "<rootDir>/config/cssTransform.js",
+      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ]
   },
   "dependencies": {
     "classnames": "^2.2.6"
