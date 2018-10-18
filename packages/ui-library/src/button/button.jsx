@@ -11,13 +11,15 @@ const Button = ({ children, className, onClick }) => (
 );
 
 Button.defaultProps = {
-  className: undefined
+  className: undefined,
+  children: [],
+  onClick: null
 };
 
 Button.propTypes = {
-  children: oneOfType([arrayOf(node), node]).isRequired,
+  children: oneOfType([arrayOf(node), node]),
   className: string,
-  onClick: func.isRequired
+  onClick: func
 };
 
 export default Button;

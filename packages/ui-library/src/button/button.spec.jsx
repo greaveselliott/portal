@@ -21,6 +21,7 @@ describe('Button component...', () => {
     expect(SUT).toMatchInlineSnapshot(`
 <button
   className="eg-button"
+  onClick={null}
 >
   1
   2
