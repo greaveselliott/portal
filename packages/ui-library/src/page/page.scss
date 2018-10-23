@@ -1,9 +1,11 @@
 .eg-page {
     display: block;
+    padding-left: 16px;
+    padding-right: 16px;
 
     &__title {
         font-size: 21px;
         line-height: 1.6em;
-        margin-bottom: 24px;
+        margin-bottom: 12px;
     }
 }

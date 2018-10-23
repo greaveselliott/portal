@@ -16,5 +16,5 @@ ReactDOM.render(
   <Provider store={store}>
     <StageContainer />
   </Provider>,
-  document.querySelector('.container')
+  document.querySelector('.eg-container')
 );

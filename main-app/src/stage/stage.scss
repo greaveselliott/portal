@@ -2,38 +2,46 @@
     min-width: 320px;
     max-width: 480px;
     margin: 0 auto;
+    padding-top: 80px;
 
     &__header {
-        font-size: 21px;
-        text-align: center;
-        position: relative;
-        background-color: #dedede;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        margin-bottom: 18px;
+      align-items: center;
+      background-color: #f15d5d;
+      display: flex;
+      font-size: 21px;
+      height: 60px;
+      left: 50%;
+      margin-bottom: 18px;
+      max-width: 480px;
+      min-width: 320px;
+      position: fixed;
+      text-align: center;
+      top: 0;
+      transform: translateX(-50%);
+      width: 100%;
+      z-index: 10;
 
-        &:before, &:after {
-            position: absolute;
-            content: "";
-            height: 100%;
-            width: 100%;
-            background-color: inherit;
-            top: 0;
-        }
+      &:before, &:after {
+          background-color: inherit;
+          content: "";
+          height: 100%;
+          position: absolute;
+          top: 0;
+          width: 200%;
+      }
 
-        &:before {
-            left: 100%;
-        }
+      &:before {
+          left: 100%;
+      }
 
-        &:after {
-            right: 100%;
-        }
+      &:after {
+          right: 100%;
+      }
     }
 
     &__back-button {
         margin-bottom: 0;
-        left: 0;
+        left: 16px;
         position: absolute;
     }
 
@@ -44,6 +52,6 @@
     &__logout {
         margin-bottom: 0;
         position: absolute;
-        right: 0;
+        right: 16px;
     }
 }

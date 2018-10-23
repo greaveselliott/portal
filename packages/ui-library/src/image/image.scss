@@ -1,3 +1,25 @@
+@keyframes pulse-ring {
+  0% {
+    transform: scale(.33);
+  }
+  80%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(.8);
+  }
+}
+
+
 .eg-image {
     position: relative;
     background-color: #dedede;
@@ -7,11 +29,26 @@
     width: 0;
     padding: 50%;
 
+    &:after {
+      content: '';
+      position: absolute;
+      left: calc(50% - 15px);
+      top: calc(50% - 15px);
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-color: rgba(0,0,0,0.2);
+      border-radius: 15px;
+      animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+      z-index: 1;
+    }
+
     &__element {
         width: 100%;
         height: auto;
         position: absolute;
         top: 0;
         left: 0;
+        z-index: 2;
     }
 }

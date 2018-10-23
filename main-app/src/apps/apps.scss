@@ -1,8 +1,9 @@
 .eg-apps {
     &__app {
-        display: inline-block;
+        display: block;
         width: calc(50% - 16px);
-        
+        float: left;
+
         &:nth-child(odd) {
             margin-right: 16px;
         }
@@ -15,10 +16,9 @@
     &__logo {
         margin-bottom: 16px;
     }
-    
+
     &__action {
-        width: calc(50% - 8px);
-        
+
         &:nth-child(odd) {
             margin-right: 8px;
         }
@@ -32,11 +32,9 @@
         margin-bottom: 16px;
     }
 
-    &__field {
-
-    }
-
-    &__save {
-
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
     }
 }
