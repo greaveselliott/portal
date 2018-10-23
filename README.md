@@ -8,6 +8,9 @@
 ```
 
 # Roadmap
+## Link to Prototype
+https://www.figma.com/file/VG6TOjoJ7rNdkvWs7l6NIg4p/Untitled?node-id=0%3A1
+
 ## The user can log into the portal using email and password
 - [x] Implement Redux async action/reducer for authenticating
 - [x] Handle successful auth
